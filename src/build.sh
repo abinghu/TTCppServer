@@ -12,6 +12,8 @@ build() {
 	make
 	cd ../msg_server
 	make
+    cd ../msfs
+    make
 	#cd ../file_server
 	#make
 	#cd ../test_client
@@ -25,6 +27,7 @@ build() {
 	cp login_server/login_server ../run/login_server/
 	cp route_server/route_server ../run/route_server/
 	cp msg_server/msg_server ../run/msg_server/
+    cp msfs/msfs ../run/msfs/
 	cp file_server/file_server ../run/file_server/
 	cp tools/daeml ../run/
 
@@ -32,7 +35,7 @@ build() {
 	if [ -e "$build_name" ]; then 
 		rm $build_name
 	fi
-	tar zcvf $build_name login_server/login_server route_server/route_server msg_server/msg_server 
+	tar zcvf $build_name login_server/login_server route_server/route_server msg_server/msg_server msfs/msfs
         # file_server/file_server
 }
 
@@ -45,6 +48,8 @@ clean() {
 	make clean
 	cd ../msg_server
 	make clean
+    cd ../msfs
+    make clean
 	cd ../file_server
 	make clean
 	cd ../test_client
