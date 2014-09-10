@@ -12,6 +12,8 @@ build() {
 	make
 	cd ../msg_server
 	make
+	cd ../msfs
+	make
 	#cd ../file_server
 	#make
 	#cd ../test_client
@@ -27,12 +29,13 @@ build() {
 	cp msg_server/msg_server ../run/msg_server/
 	cp file_server/file_server ../run/file_server/
 	cp tools/daeml ../run/
+    cp msfs/msfs ../run/msfs/
 
 	build_name=im-server-$1.tar.gz
 	if [ -e "$build_name" ]; then 
 		rm $build_name
 	fi
-	tar zcvf $build_name login_server/login_server route_server/route_server msg_server/msg_server 
+	tar zcvf $build_name login_server/login_server route_server/route_server msg_server/msg_server msfs/msfs
         # file_server/file_server
 }
 
@@ -48,6 +51,8 @@ clean() {
 	cd ../file_server
 	make clean
 	cd ../test_client
+	make clean
+	cd ../msfs
 	make clean
 }
 

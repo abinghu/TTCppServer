@@ -14,7 +14,7 @@ LIB_NAME=
 LIB_VER=1.0.0
 
 # 二进制目标
-BIN=../run/msfs
+BIN=msfs
 
 #源文件目录
 SrcDir= . common http storage
